@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+    <title>To Do List</title>
+</head>
+<body>
+
+    <div class="container p-5">
+        <div class="row">
+            <div class="col">
+                <div class="todo p-4">
+                    <h1 class="mb-2">To Do List</h1>
+                    <form name="myform">
+                        <input type="text" name="iteminput" class="form-control mb-2" placeholder="Enter Item...">
+                        <input type="button" name="additem" class="btn btn-success" value="Add" onclick="myitem()">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col" id="show">
+                    
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function myitem(){
+            var items = myform.iteminput.value;
+
+            document.getElementById("show").innerHTML = items;
+        }
+    </script>
+    
+    <script src="src/js/jquery-slim.min.js"></script>
+    <script src="src/js/popper.min.js"></script>
+    <script src="src/js/bootstrap.min.js"></script>
+</body>
+</html>
