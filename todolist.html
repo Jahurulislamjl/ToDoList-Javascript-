@@ -15,7 +15,7 @@
                 <div class="todo p-4">
                     <h1 class="mb-2">To Do List</h1>
                     <form name="myform">
-                        <input type="text" name="iteminput" class="form-control mb-2" placeholder="Enter Item...">
+                        <input type="text" name="iteminput" class="form-control mb-2" id="showEditText" placeholder="Enter Item...">
                         <input type="button" name="additem" class="btn btn-success" value="Add" onclick="myitem()">
                     </form>
                 </div>
@@ -23,18 +23,38 @@
         </div>
 
         <div class="row">
-            <div class="col" id="show">
-                    
+            <div class="col" >
+                <ol id="show">
+                </ol> 
             </div>
         </div>
     </div>
 
     <script>
+        var arrayItem = [];
         function myitem(){
-            var items = myform.iteminput.value;
-
-            document.getElementById("show").innerHTML = items;
+            arrayItem.push("<li class='m-2'>"+myform.iteminput.value+" <button class='btn btn-primary ml-4' onclick='editItem()'>Edit</button> <button class='btn btn-danger pl-2' onclick='deleteItem()'>Delete</button></li>")
+            this.getItem()
+            myform.iteminput.value=''
         }
+        function getItem(){
+            $('#show').html('')
+            for (let i = 0; i < arrayItem.length; i++) {
+                $('#show').append(arrayItem[i]);
+            }
+            
+        }
+
+        function editItem(){
+        
+            
+        }
+
+        function deleteItem(){
+            $( 'arrayItem[i]').remove();
+        }
+       
+
     </script>
     
     <script src="src/js/jquery-slim.min.js"></script>
