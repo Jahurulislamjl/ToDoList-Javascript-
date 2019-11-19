@@ -15,8 +15,9 @@
                 <div class="todo p-4">
                     <h1 class="mb-2">To Do List</h1>
                     <form name="myform">
-                        <input type="text" name="iteminput" class="form-control mb-2" id="showEditText" placeholder="Enter Item...">
-                        <input type="button" name="additem" class="btn btn-success" value="Add" onclick="myitem()">
+                        <input type="text" name="iteminput" class="form-control mb-2" placeholder="Enter Item...">
+                        <input type="button" name="additem" class="btn btn-success" value="Add" onclick="myitem()" id="gh">
+                        <input type="button" name="updateitem" class="btn btn-success" value="Update" onclick="updateItem()">
                     </form>
                 </div>
             </div>
@@ -24,7 +25,7 @@
 
         <div class="row">
             <div class="col" >
-                <ol id="show">
+                <ol id="show" class="olitem">
                 </ol> 
             </div>
         </div>
@@ -49,7 +50,13 @@
         }
 
         function editItem(i){
-            myform.iteminput.value=$("#string"+i).text()    
+            myform.iteminput.value=$("#string"+i).text()   
+        }
+
+        function updateItem(){
+            this.myitem() 
+           
+         
         }
 
         function deleteItem(i){
