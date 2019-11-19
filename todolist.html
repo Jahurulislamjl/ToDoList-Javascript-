@@ -16,6 +16,7 @@
                     <h1 class="mb-2">To Do List</h1>
                     <form name="myform">
                         <input type="text" name="iteminput" class="form-control mb-2" placeholder="Enter Item...">
+                        <input type='hidden' id='updateIndex' value="">
                         <input type="button" name="additem" class="btn btn-success" value="Add" onclick="myitem()" id="gh">
                         <input type="button" name="updateitem" class="btn btn-success" value="Update" onclick="updateItem()">
                     </form>
@@ -51,19 +52,19 @@
 
         function editItem(i){
             myform.iteminput.value=$("#string"+i).text()  
+            $("#updateIndex").val(i)
             
         }
 
         function updateItem(){
-            //this.myitem() 
+            this.arrayItem[$("#updateIndex").val()]=myform.iteminput.value
+            this.getItem()
          
         }
 
         function deleteItem(i){
-            //$("#string"+i).remove()
-            //$("#string"+i).parents("ol").remove();
-            //$('#show').remove()
-
+            this.arrayItem.splice(i,1)
+            this.getItem()
         }
        
 
