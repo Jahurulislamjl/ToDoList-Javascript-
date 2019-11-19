@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Value</title>
+</head>
+<body>
+    <form name="myform">
+        <input type="text" name="firstinput" id="firstvl">
+        <input type="text" name="secondinput" id="scnvl">
+        <input type="text" name="operatorinput" id="operator" placeholder="operator">
+
+        <button id="submt" onclick="submitResutl()">Submit</button>
+        <!-- <input type="button" value="+" onclick="oparetor(1)">
+        <input type="button" value="-" onclick="oparetor(2)">
+        <input type="button" value="*" onclick="oparetor(3)">
+        <input type="button" value="/" onclick="oparetor(4)"> -->
+    </form>
+    <div id="showRestul"></div>
+</body>
+
+<script>
+function submitResutl(){
+    var firstvl = Number(document.getElementById('firstvl').value) 
+    var secondvl = Number(document.getElementById('scnvl').value) 
+    var operat = document.getElementById('operator').value 
+
+    switch(operat){
+        case '+':
+        document.getElementById("showRestul").innerHTML = firstvl+secondvl;
+        break;
+
+        case '-':
+        document.getElementById("showRestul").innerHTML = firstvl-secondvl;
+        break;
+
+        case '*':
+        document.getElementById("showRestul").innerHTML = firstvl*secondvl;
+        break;
+
+        case '/':
+        document.getElementById("showRestul").innerHTML = firstvl/secondvl;
+        break;
+
+    }
+
+
+
+}
+</script>
+</html>
