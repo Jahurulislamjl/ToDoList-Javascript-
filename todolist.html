@@ -31,27 +31,29 @@
     </div>
 
     <script>
+
         var arrayItem = [];
         function myitem(){
-            arrayItem.push("<li class='m-2'>"+myform.iteminput.value+" <button class='btn btn-primary ml-4' onclick='editItem()'>Edit</button> <button class='btn btn-danger pl-2' onclick='deleteItem()'>Delete</button></li>")
+            this.arrayItem.push(myform.iteminput.value)
             this.getItem()
             myform.iteminput.value=''
         }
         function getItem(){
             $('#show').html('')
             for (let i = 0; i < arrayItem.length; i++) {
-                $('#show').append(arrayItem[i]);
-            }
-            
+              
+                $('#show').append(
+                    "<li class='m-2'> <span id='string"+i+"'>"+arrayItem[i]+"</span> <button class='btn btn-primary ml-4' onclick='editItem("+i+")'>Edit</button> <button class='btn btn-danger pl-2' onclick='deleteItem("+i+")'>Delete</button></li>"
+                );
+            }   
         }
 
-        function editItem(){
-        
-            
+        function editItem(i){
+            myform.iteminput.value=$("#string"+i).text()    
         }
 
-        function deleteItem(){
-            $( 'arrayItem[i]').remove();
+        function deleteItem(i){
+            $("#string"+i).remove()
         }
        
 
