@@ -6,17 +6,10 @@
     <title>Add Value</title>
 </head>
 <body>
-    <form name="myform">
-        <input type="text" name="firstinput" id="firstvl">
-        <input type="text" name="secondinput" id="scnvl">
+        <input type="number" step="any" name="firstinput" id="firstvl" placeholder="First value">
+        <input type="number" step="any" name="secondinput" id="scnvl" placeholder="Second Value">
         <input type="text" name="operatorinput" id="operator" placeholder="operator">
-
         <button id="submt" onclick="submitResutl()">Submit</button>
-        <!-- <input type="button" value="+" onclick="oparetor(1)">
-        <input type="button" value="-" onclick="oparetor(2)">
-        <input type="button" value="*" onclick="oparetor(3)">
-        <input type="button" value="/" onclick="oparetor(4)"> -->
-    </form>
     <div id="showRestul"></div>
 </body>
 
@@ -24,29 +17,25 @@
 function submitResutl(){
     var firstvl = Number(document.getElementById('firstvl').value) 
     var secondvl = Number(document.getElementById('scnvl').value) 
-    var operat = document.getElementById('operator').value 
+    var operatr = document.getElementById('operator').value 
 
-    switch(operat){
+    switch(operatr){
         case '+':
-        document.getElementById("showRestul").innerHTML = firstvl+secondvl;
+        document.getElementById("showRestul").innerHTML = firstvl+secondvl
         break;
 
         case '-':
-        document.getElementById("showRestul").innerHTML = firstvl-secondvl;
+        document.getElementById("showRestul").innerHTML = firstvl-secondvl
         break;
 
         case '*':
-        document.getElementById("showRestul").innerHTML = firstvl*secondvl;
+        document.getElementById("showRestul").innerHTML = firstvl*secondvl
         break;
 
         case '/':
-        document.getElementById("showRestul").innerHTML = firstvl/secondvl;
+        document.getElementById("showRestul").innerHTML = firstvl/secondvl
         break;
-
     }
-
-
-
 }
 </script>
 </html>

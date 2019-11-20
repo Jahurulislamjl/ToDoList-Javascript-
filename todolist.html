@@ -24,16 +24,15 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row mt-5">
             <div class="col" >
-                <table>
+                <div>
                     <th>
-                        <td>Item Name</td>
-                        <td>Action</td>
+                        <tr>name</tr>
                     </th>
-                    <ol id="show" class="olitem">
+                </div>
+                    <ol id="show" class="">
                     </ol> 
-                </table>
             </div>
         </div>
     </div>
@@ -51,7 +50,7 @@
             for (let i = 0; i < arrayItem.length; i++) {
               
                 $('#show').append(
-                    "<li class='m-2'> <span id='string"+i+"'>"+arrayItem[i]+"</span> <button class='btn btn-primary ml-4' onclick='editItem("+i+")'>Edit</button> <button class='btn btn-danger pl-2' onclick='deleteItem("+i+")'>Delete</button></li>"
+                    "<li class='mt-1 pb-3 px-2' style='background: red'> <span id='string"+i+"'>"+arrayItem[i]+"</span> <button class='btn btn-danger pl-2 float-right' onclick='deleteItem("+i+")'>Delete</button> <button class='btn btn-primary ml-4 pr-2 float-right' onclick='editItem("+i+")'>Edit</button> </li>"
                 );
             }   
         }
