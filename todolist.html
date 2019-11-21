@@ -26,10 +26,12 @@
 
         <div class="row mt-5">
             <div class="col" >
-                <div>
-                    <th>
-                        <tr>name</tr>
-                    </th>
+                <div class="head">
+                    
+                    <tr>
+                        <td>Item Name</td>
+                        <td>Action</td>
+                    </tr>
                 </div>
                     <ol id="show" class="">
                     </ol> 
@@ -50,7 +52,7 @@
             for (let i = 0; i < arrayItem.length; i++) {
               
                 $('#show').append(
-                    "<li class='mt-1 pb-3 px-2' style='background: red'> <span id='string"+i+"'>"+arrayItem[i]+"</span> <button class='btn btn-danger pl-2 float-right' onclick='deleteItem("+i+")'>Delete</button> <button class='btn btn-primary ml-4 pr-2 float-right' onclick='editItem("+i+")'>Edit</button> </li>"
+                    "<li class='mt-1 pb-3 px-2' style='background: rgb(211, 253, 211)'> <span id='string"+i+"'>"+arrayItem[i]+"</span> <button class='btn btn-danger pl-2 float-right' onclick='deleteItem("+i+")'>Delete</button> <button class='btn btn-primary mr-4 pr-2 float-right' onclick='editItem("+i+")'>Edit</button> </li>"
                 );
             }   
         }
