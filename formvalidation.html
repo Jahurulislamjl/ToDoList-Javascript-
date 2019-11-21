@@ -10,49 +10,34 @@
 <body>
     
     <div class="container">
-        <form class="formInfo">
-            <h1>User Info</h1>
-            <div class="form-group form-inline">
-                <input type="text"  id="firstName" placeholder="First name" class="form-control mr-2">
-                <input type="text"  id="lastName" placeholder="Last name" class="form-control ml-5">
-                <label id="nameError"></label>
-            </div>
-            <div class="form-group">
-                <input type="email" id="email" placeholder="Email" class="form-control">
-                <label id="emailError"></label>
-            </div>
-            <div class="form-group">
-                <input type="password" id="password" placeholder="Password" class="form-control">
-                <label id="passwordError"></label>
-            </div>
-            <div class="form-group">
-                <input type="number" id="phnumber" placeholder="Phone no" class="form-control">
-                <label id="phoneError"></label>
-            </div>
+        <form name="forminput" method="POST" onsubmit="return validateForm()">
+            <input type="text" id="name" placeholder="name"> <label id="nameErr"></label> <br>
+            <input type="email" id="email" placeholder="Email"> <br>
+            <input type="text" id="password" placeholder="Password"> <br>
+            <input type="number" id="phoneNo" placeholder="Phone no"> <br>
+            <textarea name="" id="address" cols="30" rows="5"></textarea>
+            <br>
+            <input type="submit" name="submit" value="Submit">
+            <input type="reset" name="reset" value="Reset">
 
-            <div class="form-group">
-                <textarea id="address" cols="30" rows="5" class="form-control" placeholder="Address"></textarea>
-                <label id="addressError"></label>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-success" id="submitInfo()">Submit</button>
-                <button type="reset" class="btn btn-warning">Reset</button>
-            </div>
         </form>
     </div>
+    
 
     <script>
+        function validateForm(){
+            var nam = document.getElementById("name").value
+            var eml = document.getElementById("email").value
+            var pas = document.getElementById("password").value
+            var phone = document.getElementById("phoneNo").value
+            var addrss = document.getElementById("address").value
 
-        function submitInfo(){
-            var fstname = document.getElementById('firstName').value
-            var fstname = document.getElementById('lastName').value
-            var fstname = document.getElementById('email').value
-            var fstname = document.getElementById('Password').value
-            var fstname = document.getElementById('phnumber').value
-
-
+            if(nam=="" ){
+                document.getElementById("nameErr").innerHTML="Blank"
+            }
+            //console.log(nam)
         }
-
+        
     </script>
 
 
