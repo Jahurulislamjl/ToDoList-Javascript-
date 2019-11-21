@@ -32,8 +32,9 @@
             var phone = document.getElementById("phoneNo").value
             var addrss = document.getElementById("address").value
 
-            if(nam=="" ){
-                document.getElementById("nameErr").innerHTML="Blank"
+            if(!nam.value.match(/^[a-zA-Z\s-, ]+$/) ){
+                document.getElementById("nameErr").innerHTML="Blank";
+                return false;
             }
             //console.log(nam)
         }
