@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="formStyle.css">
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+    <title>Form</title>
+</head>
+<body>
+    
+    <div class="container">
+        <form class="formInfo">
+            <h1>User Info</h1>
+            <div class="form-group form-inline">
+                <input type="text"  id="firstName" placeholder="First name" class="form-control mr-2">
+                <input type="text"  id="lastName" placeholder="Last name" class="form-control ml-5">
+                <label id="nameError"></label>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Email" class="form-control">
+                <label id="emailError"></label>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Password" class="form-control">
+                <label id="passwordError"></label>
+            </div>
+            <div class="form-group">
+                <input type="number" id="phnumber" placeholder="Phone no" class="form-control">
+                <label id="phoneError"></label>
+            </div>
+
+            <div class="form-group">
+                <textarea id="address" cols="30" rows="5" class="form-control" placeholder="Address"></textarea>
+                <label id="addressError"></label>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success" id="submitInfo()">Submit</button>
+                <button type="reset" class="btn btn-warning">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+
+        function submitInfo(){
+            var fstname = document.getElementById('firstName').value
+            var fstname = document.getElementById('lastName').value
+            var fstname = document.getElementById('email').value
+            var fstname = document.getElementById('Password').value
+            var fstname = document.getElementById('phnumber').value
+
+
+        }
+
+    </script>
+
+
+<script src="src/js/jquery-slim.min.js"></script>
+<script src="src/js/popper.min.js"></script>
+<script src="src/js/bootstrap.min.js"></script>
+</body>
+</html>
