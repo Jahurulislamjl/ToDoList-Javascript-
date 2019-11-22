@@ -11,11 +11,14 @@
     
     <div class="container">
         <form name="forminput" method="POST" onsubmit="return validateForm()">
-            <input type="text" id="name" placeholder="name" onkeyup=""> 
+            <input type="text" id="name" placeholder="Name" onkeyup="namevalid()">
+            <label id="nameError"></label> <br>
             <input type="email" id="email" placeholder="Email" onkeyup="emailvalid()">
-            <label id="showem"></label> <br>
-            <input type="text" id="password" placeholder="Password"> <br>
-            <input type="number" id="phoneNo" placeholder="Phone no"> <br>
+            <label id="emailError"></label> <br>
+            <input type="text" id="password" placeholder="Password" onkeyup="passwordValid()">
+            <label id="passError"></label> <br>
+            <input type="number" id="phoneNo" placeholder="Phone no" onkeyup="phoneValid()">
+            <label id="numError"></label> <br>
             <textarea name="" id="address" cols="30" rows="5"></textarea>
             <br>
             <input type="submit" name="submit" value="Submit" id="submit">
@@ -40,16 +43,74 @@
             //console.log(nam)
         }
 
-        function emailvalid(){
-            var eml = document.getElementById("email").value
-            var emailRegEx = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-            if(emailRegEx.test(eml)){
-                document.getElementById("showem").innerHTML = "yo"
+        function namevalid(){
+            var getName = document.getElementById("name")
+            var nameValue = getName.value
+            var nameRegEx = /^[A-Z]+[a-zA-Z\s.-]+$/
+            var namError = document.getElementById("nameError")
+
+            if(!nameRegEx.test(nameValue)){
+                getName.style.borderColor = "red"
+                namError.innerHTML = "Start upercase&only alphabetic char!!"
+                namError.style.color = "red"
             }
             else{
-                document.getElementById("showem").innerHTML = "no"
+                getName.style.borderColor = "initial"
+                namError.innerHTML = " "
             }
+        }
 
+        function emailvalid(){
+            var getemail = document.getElementById("email")
+            var emlValue = getemail.value
+            var emailRegEx = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+            var emlError = document.getElementById("emailError")
+
+            if(!emailRegEx.test(emlValue)){
+                getemail.style.borderColor="red"
+                emlError.innerHTML = "Invalid email!"
+                emlError.style.color = "red"   
+            }else{
+                getemail.style.borderColor="initial"
+                emlError.innerHTML = "Correct!"
+                emlError.style.color = "green"
+            }
+        }
+
+        function passwordValid(){
+            var getPass = document.getElementById("password")
+            var passValue = getPass.value
+            var passRegEX = /^[A-Za-z0-9]+$/
+            var passError = document.getElementById("passError")
+
+            if(!passRegEX.test(passValue) || passValue.length<6){
+                getPass.style.borderColor = "red"
+                passError.innerHTML = "Must be 6 char (Number and Alphabet)!!"
+                passError.style.color = "red"
+            }
+            else{
+                getPass.style.borderColor = "initial"
+                passError.innerHTML = "Strong!!"
+                numError.style.color = "green"
+            }
+        }
+
+        function phoneValid(){
+            var getPhoneNo = document.getElementById("phoneNo")
+            var numValid = getPhoneNo.value
+            var numRegEx = /^[0-9]+$/
+            var numError = document.getElementById("numError")
+
+            if(!numRegEx.test(numValid) || numValid.length!=11){
+                getPhoneNo.style.borderColor = "red"
+                numError.innerHTML = "Phone no invalid!!"
+                numError.style.color = "red"
+            }
+            else{
+                getPhoneNo.style.borderColor = "initial"
+                numError.innerHTML = "Ok!!"
+                numError.style.color = "green"
+            }
         }
         
     </script>
