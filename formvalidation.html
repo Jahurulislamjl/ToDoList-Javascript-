@@ -12,7 +12,8 @@
     <div class="container">
         <form name="forminput" method="POST" onsubmit="return validateForm()">
             <input type="text" id="name" placeholder="name" onkeyup=""> 
-            <input type="email" id="email" placeholder="Email" onkeyup="emailvalid()"> <br>
+            <input type="email" id="email" placeholder="Email" onkeyup="emailvalid()">
+            <label id="showem"></label> <br>
             <input type="text" id="password" placeholder="Password"> <br>
             <input type="number" id="phoneNo" placeholder="Phone no"> <br>
             <textarea name="" id="address" cols="30" rows="5"></textarea>
@@ -42,8 +43,11 @@
         function emailvalid(){
             var eml = document.getElementById("email").value
             var emailRegEx = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-            if(){
-                
+            if(emailRegEx.test(eml)){
+                document.getElementById("showem").innerHTML = "yo"
+            }
+            else{
+                document.getElementById("showem").innerHTML = "no"
             }
 
         }
