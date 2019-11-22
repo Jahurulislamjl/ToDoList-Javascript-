@@ -11,13 +11,13 @@
     
     <div class="container">
         <form name="forminput" method="POST" onsubmit="return validateForm()">
-            <input type="text" id="name" placeholder="name"> <label id="nameErr"></label> <br>
-            <input type="email" id="email" placeholder="Email"> <br>
+            <input type="text" id="name" placeholder="name" onkeyup=""> 
+            <input type="email" id="email" placeholder="Email" onkeyup="emailvalid()"> <br>
             <input type="text" id="password" placeholder="Password"> <br>
             <input type="number" id="phoneNo" placeholder="Phone no"> <br>
             <textarea name="" id="address" cols="30" rows="5"></textarea>
             <br>
-            <input type="submit" name="submit" value="Submit" id="submit"
+            <input type="submit" name="submit" value="Submit" id="submit">
             <input type="reset" name="reset" value="Reset">
 
         </form>
@@ -37,6 +37,15 @@
                 return false;
             }
             //console.log(nam)
+        }
+
+        function emailvalid(){
+            var eml = document.getElementById("email").value
+            var emailRegEx = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+            if(){
+                
+            }
+
         }
         
     </script>
