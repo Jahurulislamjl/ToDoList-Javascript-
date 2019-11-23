@@ -11,17 +11,18 @@
     
     <div class="container">
         <form name="forminput" method="POST" onsubmit="return validateForm()">
-            <input type="text" id="name" placeholder="Name" onkeyup="namevalid()">
+            <input type="text" id="name" placeholder="Name" onkeyup="namevalid()" required>
             <label id="nameError"></label> <br>
-            <input type="email" id="email" placeholder="Email" onkeyup="emailvalid()">
+            <input type="email" id="email" placeholder="Email" onkeyup="emailvalid()" required>
             <label id="emailError"></label> <br>
-            <input type="text" id="password" placeholder="Password" onkeyup="passwordValid()">
+            <input type="text" id="password" placeholder="Password" onkeyup="passwordValid()" required>
             <label id="passError"></label> <br>
-            <input type="number" id="phoneNo" placeholder="Phone no" onkeyup="phoneValid()">
+            <input type="number" id="phoneNo" placeholder="Phone no" onkeyup="phoneValid()" required>
             <label id="numError"></label> <br>
-            <textarea name="" id="address" cols="30" rows="5"></textarea>
+            <textarea name="" id="address" cols="30" rows="5" onkeyup="addressValid()" required></textarea>
+            <label id="addressError"></label>
             <br>
-            <input type="submit" name="submit" value="Submit" id="submit">
+            <input type="submit" name="submit" value="Submit" id="submit" >
             <input type="reset" name="reset" value="Reset">
 
         </form>
@@ -30,17 +31,12 @@
 
     <script>
         function validateForm(){
-            var nam = document.getElementById("name").value
-            var eml = document.getElementById("email").value
-            var pas = document.getElementById("password").value
-            var phone = document.getElementById("phoneNo").value
-            var addrss = document.getElementById("address").value
+            this.namevalid()
+            this.emailvalid()
+            this.passwordValid()
+            this.phoneValid()
+            this.addressValid()
 
-            if(!nam.value.match(/^[a-zA-Z\s-, ]+$/) ){
-                document.getElementById("nameErr").innerHTML="Blank";
-                return false;
-            }
-            //console.log(nam)
         }
 
         function namevalid(){
@@ -69,7 +65,8 @@
             if(!emailRegEx.test(emlValue)){
                 getemail.style.borderColor="red"
                 emlError.innerHTML = "Invalid email!"
-                emlError.style.color = "red"   
+                emlError.style.color = "red"  
+                 
             }else{
                 getemail.style.borderColor="initial"
                 emlError.innerHTML = "Correct!"
@@ -91,7 +88,7 @@
             else{
                 getPass.style.borderColor = "initial"
                 passError.innerHTML = "Strong!!"
-                numError.style.color = "green"
+                passError.style.color = "green"
             }
         }
 
@@ -103,13 +100,30 @@
 
             if(!numRegEx.test(numValid) || numValid.length!=11){
                 getPhoneNo.style.borderColor = "red"
-                numError.innerHTML = "Phone no invalid!!"
+                numError.innerHTML = "Phone no invalid(11 digit)!!"
                 numError.style.color = "red"
             }
             else{
                 getPhoneNo.style.borderColor = "initial"
                 numError.innerHTML = "Ok!!"
                 numError.style.color = "green"
+            }
+        }
+
+        function addressValid(){
+            var getaddress = document.getElementById("address")
+            var addValid = getaddress.value
+            var addError = document.getElementById("numError")
+
+            if(addValid.length<=100){
+                getaddress.style.backgroundColor = "initial"
+                addressError.innerHTML = " "
+            }
+            else{
+                
+                getaddress.style.backgroundColor = "red"
+                addressError.innerHTML = "100 char allowed!!"
+                addressError.style.color = "red"
             }
         }
         
