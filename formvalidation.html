@@ -132,12 +132,10 @@
 
             if(addValid.length<=100){
                 getaddress.style.backgroundColor = "white"
-                for(let i=1; i=addValid.length; i++){
-                    addressError.innerHTML = "100-i";
-                }
-                
+                addressError.innerHTML = 100-addValid.length+"/100"
+                addressError.style.color = "orange"
             }
-            else{addressError.innerHTML = " "
+            else{
                 
                 getaddress.style.backgroundColor = "red"
                 addressError.innerHTML = "100 char allowed!!"
