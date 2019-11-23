@@ -26,6 +26,8 @@
             <input type="reset" name="reset" value="Reset">
 
         </form>
+
+        <div id="showInfo"></div>
     </div>
     
 
@@ -36,6 +38,7 @@
             this.passwordValid()
             this.phoneValid()
             this.addressValid()
+            document.getElementById("showInfo").innerHTML = nameValue+emlValue+passValue+numValid+addValid
 
         }
 
