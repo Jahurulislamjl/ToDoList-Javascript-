@@ -10,22 +10,26 @@
 <body>
     
     <div class="container">
-        <form name="forminput" method="POST" onsubmit="return validateForm()">
-            <input type="text" id="name" placeholder="Name" onkeyup="namevalid()" required>
-            <label id="nameError"></label> <br>
-            <input type="email" id="email" placeholder="Email" onkeyup="emailvalid()" required>
-            <label id="emailError"></label> <br>
-            <input type="text" id="password" placeholder="Password" onkeyup="passwordValid()" required>
-            <label id="passError"></label> <br>
-            <input type="number" id="phoneNo" placeholder="Phone no" onkeyup="phoneValid()" required>
-            <label id="numError"></label> <br>
-            <textarea name="" id="address" cols="30" rows="5" onkeyup="addressValid()" required></textarea>
-            <label id="addressError"></label>
-            <br>
-            <input type="submit" name="submit" value="Submit" id="submit" >
-            <input type="reset" name="reset" value="Reset">
-
-        </form>
+        <div class="forminfo">
+            <div>
+                <h3>User Information</h3>
+            </div>
+            <form name="forminput" method="POST" onsubmit="return validateForm()">
+                <input type="text" id="name" class="form-control" placeholder="Name" onkeyup="namevalid()" required>
+                <label id="nameError"></label> <br>
+                <input type="email" id="email" class="form-control" placeholder="Email" onkeyup="emailvalid()" required>
+                <label id="emailError"></label> <br>
+                <input type="text" id="password" class="form-control" placeholder="Password" onkeyup="passwordValid()" required>
+                <label id="passError"></label> <br>
+                <input type="text" id="phoneNo" class="form-control" placeholder="Phone no" onkeyup="phoneValid()" required>
+                <label id="numError"></label> <br>
+                <textarea id="address" class="form-control" placeholder="Address" onkeyup="addressValid()" required></textarea>
+                <label id="addressError"></label>
+                <br>
+                <input type="submit" class="btn btn-primary" name="submit" value="Submit" >
+                <input type="reset" class="btn btn-warning" name="reset" value="Reset">
+            </form>
+        </div>
 
         <div id="showInfo"></div>
     </div>
@@ -127,10 +131,13 @@
             var addError = document.getElementById("numError")
 
             if(addValid.length<=100){
-                getaddress.style.backgroundColor = "initial"
-                addressError.innerHTML = " "
+                getaddress.style.backgroundColor = "white"
+                for(let i=1; i=addValid.length; i++){
+                    addressError.innerHTML = "100-i";
+                }
+                
             }
-            else{
+            else{addressError.innerHTML = " "
                 
                 getaddress.style.backgroundColor = "red"
                 addressError.innerHTML = "100 char allowed!!"

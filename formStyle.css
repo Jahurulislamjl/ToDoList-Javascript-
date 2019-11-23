@@ -6,10 +6,24 @@
 
 input[type=text],input[type=email],input[type=number]{
     margin-bottom: 10px;
+   
 }
 
-input[type=submit],input[type=submit]{
+input[type=submit],input[type=reset]{
     margin-top: 10px;
+}
+
+.forminfo{
+    width: 500px;
+    margin: 30px auto;
+    background:rgb(106, 219, 153);
+    padding: 40px 50px;
+    border-radius: 10px;
+}
+
+h3{
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 
