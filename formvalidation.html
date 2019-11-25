@@ -52,7 +52,6 @@
             this.addressValid()
 
             //document.getElementById("showInfo").innerHTML ="Name: "+ nameValue+"<br>"+"Eamil: "+emlValue+"<br>"+"Password: "+passValue+"<br>"+"Phone No: "+numValue+"<br>"+"Address: "+addValue
-
             if (!isError){
                 document.getElementById("showInfo").innerHTML ="Name: "+ nameValue+"<br>"+"Eamil: "+emlValue+"<br>"+"Password: "+passValue+"<br>"+"Phone No: "+numValue+"<br>"+"Address: "+addValue
             }
@@ -62,6 +61,7 @@
         }
 
         function namevalid(){
+            document.getElementById("submitbtn").disabled=false
             var getName = document.getElementById("name")
             nameValue = getName.value
             var nameRegEx = /^[A-Z]+[a-zA-Z\s.-]+$/
@@ -71,16 +71,17 @@
                 getName.style.borderColor = "red"
                 namError.innerHTML = "First letter upercase&only alphabetic char!!"
                 namError.style.color = "red"
-                isError=true
+                this.isError=true
             }
             else{
                 getName.style.borderColor = "initial"
                 namError.innerHTML = " "
-                isError=false
+                this.isError=false
             }
         }
 
         function emailvalid(){
+            document.getElementById("submitbtn").disabled=false
             var getemail = document.getElementById("email")
              emlValue = getemail.value
             var emailRegEx = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
@@ -100,6 +101,7 @@
         }
 
         function passwordValid(){
+            document.getElementById("submitbtn").disabled=false
             var getPass = document.getElementById("password")
              passValue = getPass.value
             var passRegEX = /^[A-Za-z0-9]+$/
@@ -127,6 +129,7 @@
         }
 
         function phoneValid(){
+            document.getElementById("submitbtn").disabled=false
             var getPhoneNo = document.getElementById("phoneNo")
              numValue = getPhoneNo.value
             var numRegEx = /^[0]+[1]+[0-9]+$/
@@ -147,6 +150,7 @@
         }
 
         function addressValid(){
+            document.getElementById("submitbtn").disabled=false
             var getaddress = document.getElementById("address")
              addValue = getaddress.value
             var addError = document.getElementById("numError")
@@ -155,14 +159,15 @@
                 getaddress.style.backgroundColor = "white"
                 addressError.innerHTML = 100-addValue.length+"/100"
                 addressError.style.color = "white"
-                isError=false
+                // isError=false
             }
             else{   
                 getaddress.style.backgroundColor = "red"
                 addressError.innerHTML = "100 char allowed!!"
                 addressError.style.color = "red"
-                isError=true
+                // isError=true
             }
+            
         }
         
     </script>
