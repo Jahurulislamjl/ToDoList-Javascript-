@@ -51,28 +51,14 @@
             this.phoneValid()
             this.addressValid()
 
-            document.getElementById("showInfo").innerHTML ="Name: "+ nameValue+"<br>"+"Eamil: "+emlValue+"<br>"+"Password: "+passValue+"<br>"+"Phone No: "+numValue+"<br>"+"Address: "+addValue
+            //document.getElementById("showInfo").innerHTML ="Name: "+ nameValue+"<br>"+"Eamil: "+emlValue+"<br>"+"Password: "+passValue+"<br>"+"Phone No: "+numValue+"<br>"+"Address: "+addValue
 
-            // if (!isError){
-            // document.getElementById("submitbtn").disabled=true
-            // }
-            // else{
-            //     document.getElementById("showInfo").innerHTML ="Name: "+ nameValue+"<br>"+"Eamil: "+emlValue+"<br>"+"Password: "+passValue+"<br>"+"Phone No: "+numValue+"<br>"+"Address: "+addValue
-            // }
-        }
-
-        function buttondisable(){
-            event.preventDefault()
-            this.namevalid()
-            this.emailvalid()
-            this.passwordValid()
-            this.phoneValid()
-            this.addressValid()
             if (!isError){
-            document.getElementById("submitbtn").disabled=true
+                document.getElementById("showInfo").innerHTML ="Name: "+ nameValue+"<br>"+"Eamil: "+emlValue+"<br>"+"Password: "+passValue+"<br>"+"Phone No: "+numValue+"<br>"+"Address: "+addValue
             }
-            else{
-            document.getElementById("submitbtn").disabled=false
+            else{   
+                document.getElementById("submitbtn").disabled='disabled'
+            }
         }
 
         function namevalid(){
@@ -85,10 +71,12 @@
                 getName.style.borderColor = "red"
                 namError.innerHTML = "First letter upercase&only alphabetic char!!"
                 namError.style.color = "red"
+                isError=true
             }
             else{
                 getName.style.borderColor = "initial"
                 namError.innerHTML = " "
+                isError=false
             }
         }
 
@@ -102,11 +90,12 @@
                 getemail.style.borderColor="red"
                 emlError.innerHTML = "Invalid email!"
                 emlError.style.color = "red"  
-                 
+                isError=true
             }else{
                 getemail.style.borderColor="initial"
                 emlError.innerHTML = "Correct!"
                 emlError.style.color = "green"
+                isError=false
             }
         }
 
@@ -120,6 +109,7 @@
                 getPass.style.borderColor = "red"
                 passError.innerHTML = "Minimun 6 char (Number and Alphabet)!!"
                 passError.style.color = "red"
+                isError=true
             }
             else{
                 if(passValue.length>=8){
@@ -132,6 +122,7 @@
                 passError.innerHTML = "Medium!!"
                 passError.style.color = "orange"
                 }
+                isError=false
             }
         }
 
@@ -145,11 +136,13 @@
                 getPhoneNo.style.borderColor = "red"
                 numError.innerHTML = "Must be start '01' (11 digit)!!"
                 numError.style.color = "red"
+                isError=true
             }
             else{
                 getPhoneNo.style.borderColor = "initial"
                 numError.innerHTML = "Ok!!"
                 numError.style.color = "green"
+                isError=false
             }
         }
 
@@ -162,11 +155,13 @@
                 getaddress.style.backgroundColor = "white"
                 addressError.innerHTML = 100-addValue.length+"/100"
                 addressError.style.color = "white"
+                isError=false
             }
             else{   
                 getaddress.style.backgroundColor = "red"
                 addressError.innerHTML = "100 char allowed!!"
                 addressError.style.color = "red"
+                isError=true
             }
         }
         
