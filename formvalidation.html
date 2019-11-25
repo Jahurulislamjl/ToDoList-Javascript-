@@ -14,36 +14,42 @@
             <div>
                 <h3>User Information</h3>
             </div>
-            <form name="forminput" method="POST" onsubmit="return validateForm()">
-                <input type="text" id="name" class="form-control" placeholder="Name" onkeyup="namevalid()" required>
+            <form name="forminput" method="POST">
+                <input type="text" id="name" class="form-control" placeholder="Name" onkeyup="namevalid()">
                 <label id="nameError"></label> <br>
-                <input type="email" id="email" class="form-control" placeholder="Email" onkeyup="emailvalid()" required>
+                <input type="email" id="email" class="form-control" placeholder="Email" onkeyup="emailvalid()">
                 <label id="emailError"></label> <br>
-                <input type="text" id="password" class="form-control" placeholder="Password" onkeyup="passwordValid()" required>
+                <input type="text" id="password" class="form-control" placeholder="Password" onkeyup="passwordValid()">
                 <label id="passError"></label> <br>
-                <input type="text" id="phoneNo" class="form-control" placeholder="Phone no" onkeyup="phoneValid()" required>
+                <input type="text" id="phoneNo" class="form-control" placeholder="Phone no" onkeyup="phoneValid()">
                 <label id="numError"></label> <br>
-                <textarea id="address" class="form-control" placeholder="Address" onkeyup="addressValid()" required></textarea>
+                <textarea id="address" class="form-control" placeholder="Address" onkeyup="addressValid()"></textarea>
                 <label id="addressError"></label>
                 <br>
-                <input type="submit" class="btn btn-primary" name="submit" value="Submit" >
+                <input type="button" id="submitbtn" class="btn btn-primary" value="Submit" onclick="validateForm()">
                 <input type="reset" class="btn btn-warning" name="reset" value="Reset">
             </form>
         </div>
-
         <div id="showInfo"></div>
     </div>
     
 
     <script>
+        var isError=false;
         function validateForm(){
+            event.preventDefault()
             this.namevalid()
             this.emailvalid()
             this.passwordValid()
             this.phoneValid()
             this.addressValid()
-            document.getElementById("showInfo").innerHTML = nameValue+emlValue+passValue+numValid+addValid
-
+            //document.getElementById("showInfo").innerHTML = nameValue+emlValue+passValue+numValid+addValid
+            if (!isError){
+                document.getElementById("submitbtn").disabled=false
+             }
+             else{
+                 document.getElementById("showInfo").innerHTML = nameValue+emlValue+passValue+numValid+addValid
+             }
         }
 
         function namevalid(){
@@ -54,7 +60,7 @@
 
             if(!nameRegEx.test(nameValue)){
                 getName.style.borderColor = "red"
-                namError.innerHTML = "Start upercase&only alphabetic char!!"
+                namError.innerHTML = "First letter upercase&only alphabetic char!!"
                 namError.style.color = "red"
             }
             else{
@@ -133,7 +139,7 @@
             if(addValid.length<=100){
                 getaddress.style.backgroundColor = "white"
                 addressError.innerHTML = 100-addValid.length+"/100"
-                addressError.style.color = "orange"
+                addressError.style.color = "white"
             }
             else{
                 
