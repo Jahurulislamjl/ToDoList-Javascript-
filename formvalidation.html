@@ -14,7 +14,7 @@
             <div>
                 <h3>User Information</h3>
             </div>
-            <form name="forminput" method="POST">
+            <form name="forminput" method="POST" id="forminput">
                 <input type="text" id="name" class="form-control" placeholder="Name" onkeyup="namevalid()">
                 <label id="nameError"></label> <br>
                 <input type="email" id="email" class="form-control" placeholder="Email" onkeyup="emailvalid()">
@@ -30,12 +30,19 @@
                 <input type="reset" class="btn btn-warning" name="reset" value="Reset">
             </form>
         </div>
-        <div id="showInfo"></div>
+        
     </div>
+    <div id="showInfo"></div>
     
 
     <script>
         var isError=false;
+        var nameValue;
+        var emlValue;
+        var passValue;
+        var numValue;
+        var addValue;
+
         function validateForm(){
             event.preventDefault()
             this.namevalid()
@@ -43,18 +50,34 @@
             this.passwordValid()
             this.phoneValid()
             this.addressValid()
-            //document.getElementById("showInfo").innerHTML = nameValue+emlValue+passValue+numValid+addValid
+
+            document.getElementById("showInfo").innerHTML ="Name: "+ nameValue+"<br>"+"Eamil: "+emlValue+"<br>"+"Password: "+passValue+"<br>"+"Phone No: "+numValue+"<br>"+"Address: "+addValue
+
+            // if (!isError){
+            // document.getElementById("submitbtn").disabled=true
+            // }
+            // else{
+            //     document.getElementById("showInfo").innerHTML ="Name: "+ nameValue+"<br>"+"Eamil: "+emlValue+"<br>"+"Password: "+passValue+"<br>"+"Phone No: "+numValue+"<br>"+"Address: "+addValue
+            // }
+        }
+
+        function buttondisable(){
+            event.preventDefault()
+            this.namevalid()
+            this.emailvalid()
+            this.passwordValid()
+            this.phoneValid()
+            this.addressValid()
             if (!isError){
-                document.getElementById("submitbtn").disabled=false
-             }
-             else{
-                 document.getElementById("showInfo").innerHTML = nameValue+emlValue+passValue+numValid+addValid
-             }
+            document.getElementById("submitbtn").disabled=true
+            }
+            else{
+            document.getElementById("submitbtn").disabled=false
         }
 
         function namevalid(){
             var getName = document.getElementById("name")
-            var nameValue = getName.value
+            nameValue = getName.value
             var nameRegEx = /^[A-Z]+[a-zA-Z\s.-]+$/
             var namError = document.getElementById("nameError")
 
@@ -71,7 +94,7 @@
 
         function emailvalid(){
             var getemail = document.getElementById("email")
-            var emlValue = getemail.value
+             emlValue = getemail.value
             var emailRegEx = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
             var emlError = document.getElementById("emailError")
 
@@ -89,7 +112,7 @@
 
         function passwordValid(){
             var getPass = document.getElementById("password")
-            var passValue = getPass.value
+             passValue = getPass.value
             var passRegEX = /^[A-Za-z0-9]+$/
             var passError = document.getElementById("passError")
 
@@ -109,17 +132,16 @@
                 passError.innerHTML = "Medium!!"
                 passError.style.color = "orange"
                 }
-                
             }
         }
 
         function phoneValid(){
             var getPhoneNo = document.getElementById("phoneNo")
-            var numValid = getPhoneNo.value
+             numValue = getPhoneNo.value
             var numRegEx = /^[0]+[1]+[0-9]+$/
             var numError = document.getElementById("numError")
 
-            if(!numRegEx.test(numValid) || numValid.length!=11){
+            if(!numRegEx.test(numValue) || numValue.length!=11){
                 getPhoneNo.style.borderColor = "red"
                 numError.innerHTML = "Must be start '01' (11 digit)!!"
                 numError.style.color = "red"
@@ -133,16 +155,15 @@
 
         function addressValid(){
             var getaddress = document.getElementById("address")
-            var addValid = getaddress.value
+             addValue = getaddress.value
             var addError = document.getElementById("numError")
 
-            if(addValid.length<=100){
+            if(addValue.length<=100){
                 getaddress.style.backgroundColor = "white"
-                addressError.innerHTML = 100-addValid.length+"/100"
+                addressError.innerHTML = 100-addValue.length+"/100"
                 addressError.style.color = "white"
             }
-            else{
-                
+            else{   
                 getaddress.style.backgroundColor = "red"
                 addressError.innerHTML = "100 char allowed!!"
                 addressError.style.color = "red"
