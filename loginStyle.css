@@ -9,5 +9,9 @@
 .logtext{
     margin-bottom: 20px;
     text-align: center;
-   
+}
+
+#homesection li{
+margin-bottom: 1px;
+padding: 5px;
 }
