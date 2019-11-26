@@ -11,7 +11,9 @@
     <section id="loginSection" class="py-5">
         <div class="container">
             <div class="loginBody">
-                <h3>Login</h3>
+                <div class="logtext">
+                    <h3>Login</h3>
+                </div>
                 <form id="loginform">
                     <input type="email" id="email" class="form-control" placeholder="Email" onkeyup="emailCheck()">
                     <label id="emailError"></label> <br>
@@ -22,10 +24,18 @@
             </div>
         </div>
     </section>
+    <div id="showInfo"></div>
+
+<!-- script -->
 
     <script>
+        var isError = false;
+        var emailValue;
+        var passValue;
         function loginHere(){
-
+            event.preventDefault()
+            this.emailCheck()
+            this.passCheck()
         }
 
         function emailCheck(){
@@ -35,12 +45,38 @@
             var emlError = document.getElementById("emailError")
 
             if(myEmail != emailValue){
-                emlError.innerHTML = 'Email invalid'
-                //console.log('hi')
+                getEmail.style.borderColor= "red"
+                emlError.innerHTML = 'Email invalid!'
+                emlError.style.color = "red"  
+                this.isError= true
             }
             else{
-                emlError.innerHTML = 'Email matched'
-                //console.log('h')
+                getEmail.style.borderColor= "initial"
+                emlError.innerHTML = 'Email matched!'
+                emlError.style.color = "green"
+                this.isError= false
+               
+            }
+        }
+
+        function passCheck(){
+            var getPass = document.getElementById("password")
+            var passValue = getPass.value
+            var myPass = '123'
+            var pasError = document.getElementById("passError")
+            
+            if(myPass != passValue){
+                getPass.style.borderColor= "red"
+                pasError.innerHTML = 'Wrong password!'
+                pasError.style.color = "red" 
+                this.isError= true   
+            }
+            else{
+                getPass.style.borderColor= "initial"
+                pasError.innerHTML = 'Password matched!'
+                pasError.style.color = "green"
+                this.isError= false
+               
             }
         }
 
