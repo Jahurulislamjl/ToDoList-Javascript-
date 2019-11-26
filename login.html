@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="loginStyle.css">
+    <title>Login System</title>
+</head>
+<body>
+    <section id="loginSection" class="py-5">
+        <div class="container">
+            <div class="loginBody">
+                <h3>Login</h3>
+                <form id="loginform">
+                    <input type="email" id="email" class="form-control" placeholder="Email" onkeyup="emailCheck()">
+                    <label id="emailError"></label> <br>
+                    <input type="text" id="password" class="form-control" placeholder="Password" onkeyup="passCheck()">
+                    <label id="passError"></label> <br>
+                    <input type="button" class="btn btn-success" value="Login" id="loginbutton" onclick="loginHere()">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function loginHere(){
+
+        }
+
+        function emailCheck(){
+            var getEmail = document.getElementById("email")
+            var emailValue = getEmail.value
+            var myEmail = 'islamjahurul432@gmail.com'
+            var emlError = document.getElementById("emailError")
+
+            if(myEmail != emailValue){
+                emlError.innerHTML = 'Email invalid'
+                //console.log('hi')
+            }
+            else{
+                emlError.innerHTML = 'Email matched'
+                //console.log('h')
+            }
+        }
+
+    </script>
+
+    <script src="src/js/jquery-slim.min.js"></script>
+    <script src="src/js/popper.min.js"></script>
+    <script src="src/js/bootstrap.min.js"></script>
+</body>
+</html>
