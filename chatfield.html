@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="chatStyle.css">
+    <title>chat</title>
+</head>
+<body>
+    
+    <div class="container py-5">
+        <div id="chatfield">
+
+            <div id="chatText" class="mb-3">
+                <div class="py-3">
+                    <h3>Chat</h3>
+                </div>
+                <div id="messageText">
+                    <h5>Message</h5>
+                    <textarea class="form-control" rows="10" id="message" placeholder="Text message.."></textarea>
+                </div>
+                <div id="sendtext" class="mt-3">
+                    <button class="btn btn-success btn-block">Send</button>
+                </div>
+            </div>
+
+            <div id="chatclosebtn">
+                <button class="btn btn-warning btn-block" id="chat" onclick="chat()">Chat</button>
+                <button class="btn btn-danger btn-block" id="closeChat" onclick="close()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        document.getElementById("chatText").style.display = "none"
+        document.getElementById("closeChat").style.display = "none"
+        //document.getElementById("chat").style.display = "none"
+
+        function chat(){
+            document.getElementById("chatText").style.display = "block"
+            document.getElementById("closeChat").style.display = "block"
+            document.getElementById("chat").style.display = "none"
+        }
+
+        function close(){
+            document.getElementById("chatText").style.display = "none"
+            //document.getElementById("closeChat").style.display = "none"
+            document.getElementById("chat").style.display = "block"
+        }
+
+
+    </script>
+
+    <script src="src/js/bootstrap.min.js"></script>
+</body>
+</html>
