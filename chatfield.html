@@ -13,24 +13,32 @@
         <div id="chatfield">
 
             <div id="chatText" class="mb-3">
-                <div class="py-3">
+                <div class="py-2">
                     <h3>Chat</h3>
                 </div>
                 <div id="messageText">
                     <h5>Message</h5>
-                    <textarea class="form-control" rows="10" id="message" placeholder="Text message.."></textarea>
+                    <textfield class="form-control" id="showChat"></textfield>
                 </div>
                 <div id="sendtext" class="mt-3">
-                    <button class="btn btn-success btn-block">Send</button>
+                    <div class="row">
+                        <div class="col-8">
+                            <input type="text" class="form-control" id="message" placeholder="Write text..">
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-success" onclick="sendMessage()">Send</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div id="chatclosebtn">
                 <button class="btn btn-warning btn-block" id="chat" onclick="chat()">Chat</button>
-                <button class="btn btn-danger btn-block" id="closeChat" onclick="close()">Close</button>
+                <button class="btn btn-danger btn-block" id="closeChat" onclick="closeChat()">Close</button>
             </div>
         </div>
     </div>
+    <div id="showChat"></div>
 
     <script>
 
@@ -44,15 +52,25 @@
             document.getElementById("chat").style.display = "none"
         }
 
-        function close(){
+        function closeChat(){
             document.getElementById("chatText").style.display = "none"
-            //document.getElementById("closeChat").style.display = "none"
+            document.getElementById("closeChat").style.display = "none"
             document.getElementById("chat").style.display = "block"
+            //document.getElementById("chatfield").style.cssFloat = "right"
         }
 
+        function sendMessage(){
+            var arrayText = [];
+            var messText = document.getElementById("message").value
+            arrayText.push(messText)
+            document.getElementById("showChat").innerHTML += "<p style='background: #F0F8FF; padding-left:1px; margin: 0;'>"+arrayText+"</p>"+"</br>"
+            document.getElementById("message").value=''
+        }
 
     </script>
 
+    <script src="src/js/jquery-slim.min.js"></script>
+    <script src="src/js/popper.min.js"></script>
     <script src="src/js/bootstrap.min.js"></script>
 </body>
 </html>

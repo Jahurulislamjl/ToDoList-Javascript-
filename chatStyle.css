@@ -3,4 +3,13 @@
     width: 300px;
     padding: 20px;
     margin: 50px auto;
+    border-radius: 5px;
+}
+
+input[type=text]{
+    float: left;
+}
+
+#showChat{
+    height: 250px;
 }
