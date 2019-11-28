@@ -17,16 +17,15 @@
                     <h3>Chat</h3>
                 </div>
                 <div id="messageText">
-                    <h5>Message</h5>
-                    <textfield class="form-control" id="showChat"></textfield>
+                    <div class="form-control" id="showChat"></div>
                 </div>
-                <div id="sendtext" class="mt-3">
+                <div id="sendtext" class="ml-3">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="">
                             <input type="text" class="form-control" id="message" placeholder="Write text..">
                         </div>
-                        <div class="col-4">
-                            <button class="btn btn-success" onclick="sendMessage()">Send</button>
+                        <div class="">
+                            <button class="btn btn-success" id="send" onclick="sendMessage()">Send</button>
                         </div>
                     </div>
                 </div>
@@ -42,7 +41,7 @@
 
     <script>
 
-        document.getElementById("chatText").style.display = "none"
+        document.getElementById("chatText").style.display = "block"
         document.getElementById("closeChat").style.display = "none"
         //document.getElementById("chat").style.display = "none"
 
@@ -63,7 +62,7 @@
             var arrayText = [];
             var messText = document.getElementById("message").value
             arrayText.push(messText)
-            document.getElementById("showChat").innerHTML += "<p style='background: #F0F8FF; padding-left:1px; margin: 0;'>"+arrayText+"</p>"+"</br>"
+            document.getElementById("showChat").innerHTML += "<div style='background: #F0F8FF; padding-left:5px; padding-right:5px; margin-bottom: 5px;'>"+arrayText+"</div>"
             document.getElementById("message").value=''
         }
 
