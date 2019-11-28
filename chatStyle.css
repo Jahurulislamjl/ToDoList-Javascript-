@@ -26,6 +26,21 @@ input[type=text]{
     border-left: none;
 }
 
+#frontImg img{
+    height: 60px;
+    width: 60px;
+    border-radius: 100%; 
+    border: 2px solid rgb(178, 210, 238);
+}
+
+#chatfield2{
+    background: rgb(235, 233, 233);
+    width: 300px;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 5px;
+}
+
 #showChat2{
     border-radius: 0;
     border: none;

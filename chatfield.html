@@ -29,27 +29,28 @@
                         </div>
                         <div class="">
                             <button class="btn btn-success" id="send" onclick="sendMessage()">Send</button>
-                            <!-- <button class="btn btn-success" id="send" onclick="sendMessageTwo()">Send2</button> -->
                         </div>
                     </div>
                 </div>
             </div>
 
             <div id="chatclosebtn">
-                <button class="btn btn-warning btn-block" id="chat" onclick="chat()">Chat</button>
                 <button class="btn btn-danger btn-block" id="closeChat" onclick="closeChat()">Close</button>
             </div>
+        </div>
+        <div id="frontImg">
+            <img src="image/jahurul.PNG" alt="Jahurul" onclick="chatOpen()" id="chatOpen">
         </div>
     </div>
 
 <!-- ==========Second============= -->
 
     <div class="col-6">
-        <div id="chatfield">
+        <div id="chatfield2">
 
             <div id="chatText2" class="mb-3">
                 <div class="py-2">
-                    <h3>Royel</h3>
+                    <h3>Enemy</h3>
                 </div>
                 <div id="messageText">
                     <div class="form-control py-3" id="showChat2"></div>
@@ -67,9 +68,11 @@
             </div>
             
             <div id="chatclosebtn">
-                <button class="btn btn-warning btn-block" id="chat2" onclick="chat2()">Chat</button>
                 <button class="btn btn-danger btn-block" id="closeChat2" onclick="closeChat2()">Close</button>
             </div>
+        </div>
+        <div id="frontImg">
+            <img src="image/girl.jpg" alt="Jahurul" onclick="chatOpen2()" id="chatOpen2">
         </div>
     </div>
     </div>
@@ -77,29 +80,21 @@
 
     <script>
 
-        document.getElementById("chatText").style.display = "none"
-        document.getElementById("closeChat").style.display = "none"
-        //document.getElementById("chat").style.display = "none"
+        document.getElementById("chatfield").style.display = "none"
 
-        function chat(){
-            document.getElementById("chatText").style.display = "block"
-            document.getElementById("closeChat").style.display = "block"
-            document.getElementById("chat").style.display = "none"
+        function chatOpen(){
+            document.getElementById("chatfield").style.display = "block"
+            document.getElementById("chatOpen").style.display = "none"
         }
 
         function closeChat(){
-            document.getElementById("chatText").style.display = "none"
-            document.getElementById("closeChat").style.display = "none"
-            document.getElementById("chat").style.display = "block"
+            document.getElementById("chatfield").style.display = "none"
+            document.getElementById("chatOpen").style.display = "block"
         }
-
-        
-        
-        
+ 
         function sendMessage(){
-            var arrayText = [];
-            var messText = document.getElementById("message").value
-            arrayText.push(messText)
+            var arrayText = [document.getElementById("message").value];
+
             document.getElementById("showChat").innerHTML += "<div style='text-align: end;'> <span style='background: rgb(199, 229, 255); padding:5px; border-radius: 100px;'>"+arrayText+"</span> </div>"+"</br>"
 
             document.getElementById("showChat2").innerHTML += "<div><img src='image/jahurul.PNG' style='hight:25px; width: 25px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px;'></img><span style='background: rgb(199, 229, 255); padding:5px; border-radius: 100px;'>"+arrayText+"</span></div>"+"</br>"
@@ -107,28 +102,24 @@
             document.getElementById("message").value=''
         }
 
+
 //second===========
 
-        document.getElementById("chatText2").style.display = "none"
-        document.getElementById("closeChat2").style.display = "none"
-        //document.getElementById("chat2").style.display = "none"
+        document.getElementById("chatfield2").style.display = "none"
 
-        function chat2(){
-            document.getElementById("chatText2").style.display = "block"
-            document.getElementById("closeChat2").style.display = "block"
-            document.getElementById("chat2").style.display = "none"
+        function chatOpen2(){
+            document.getElementById("chatfield2").style.display = "block"
+            document.getElementById("chatOpen2").style.display = "none"
         }
 
         function closeChat2(){
-            document.getElementById("chatText2").style.display = "none"
-            document.getElementById("closeChat2").style.display = "none"
-            document.getElementById("chat2").style.display = "block"
+            document.getElementById("chatfield2").style.display = "none"
+            document.getElementById("chatOpen2").style.display = "block"
         }
 
         function sendMessageTwo(){
-            var arrayText2 = [];
-            var messText2 = document.getElementById("message2").value
-            arrayText2.push(messText2)
+            var arrayText2 = [document.getElementById("message2").value];
+
             document.getElementById("showChat2").innerHTML += "<div style='text-align: end;'> <span style='background: rgb(255, 107, 107); padding:5px; border-radius: 100px; color:white'>"+arrayText2+"</span> </div>"+"</br>"
 
             document.getElementById("showChat").innerHTML += "<div'> <img src='image/girl.jpg' style='hight:25px; width: 25px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px; '></img> <span style='background: rgb(255, 107, 107); padding:5px; border-radius: 100px; color:white'>"+arrayText2+"</span></div>"+"</br>"
