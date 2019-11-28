@@ -19,7 +19,7 @@
                 <div id="messageText">
                     <div class="form-control" id="showChat"></div>
                 </div>
-                <div id="sendtext" class="ml-3">
+                <div id="sendtext" class="ml-3 mt-2">
                     <div class="row">
                         <div class="">
                             <input type="text" class="form-control" id="message" placeholder="Write text..">
@@ -62,7 +62,7 @@
             var arrayText = [];
             var messText = document.getElementById("message").value
             arrayText.push(messText)
-            document.getElementById("showChat").innerHTML += "<div style='background: #F0F8FF; padding-left:5px; padding-right:5px; margin-bottom: 5px;'>"+arrayText+"</div>"
+            document.getElementById("showChat").innerHTML += "<div style='background: #F0F8FF; padding:8px; margin-bottom: 5px; border-radius: 20px;'>"+arrayText+"</div>"
             document.getElementById("message").value=''
         }
 

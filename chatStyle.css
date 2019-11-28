@@ -8,20 +8,22 @@
 
 input[type=text]{
     float: left;
-    border-top: none;
+    border-right: none;
     border-radius: 0;
 }
 #showChat{
     border-radius: 0;
+    border: none;
 }
-button{
+#chat, #closeChat{
     border-radius: 0;
+    color: white;
+}
+#send{
+    border-radius: 0;
+    border-left: none;
 }
 
 #showChat{
     height: 250px;
-}
-
-#messageText{
-
 }
