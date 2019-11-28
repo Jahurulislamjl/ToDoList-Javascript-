@@ -10,14 +10,17 @@
 <body>
     
     <div class="container py-5">
+        <div class="row">
+
+        <div class="col-6">
         <div id="chatfield">
 
             <div id="chatText" class="mb-3">
                 <div class="py-2">
-                    <h3>Chat</h3>
+                    <h3>Jahurul</h3>
                 </div>
                 <div id="messageText">
-                    <div class="form-control" id="showChat"></div>
+                    <div class="form-control py-3" id="showChat"></div>
                 </div>
                 <div id="sendtext" class="ml-3 mt-2">
                     <div class="row">
@@ -26,6 +29,7 @@
                         </div>
                         <div class="">
                             <button class="btn btn-success" id="send" onclick="sendMessage()">Send</button>
+                            <!-- <button class="btn btn-success" id="send" onclick="sendMessageTwo()">Send2</button> -->
                         </div>
                     </div>
                 </div>
@@ -37,7 +41,39 @@
             </div>
         </div>
     </div>
-    <div id="showChat"></div>
+
+<!-- ==========Second============= -->
+
+    <div class="col-6">
+        <div id="chatfield">
+
+            <div id="chatText2" class="mb-3">
+                <div class="py-2">
+                    <h3>Royel</h3>
+                </div>
+                <div id="messageText">
+                    <div class="form-control py-3" id="showChat2"></div>
+                </div>
+                <div id="sendtext" class="ml-3 mt-2">
+                    <div class="row">
+                        <div class="">
+                            <input type="text" class="form-control" id="message2" placeholder="Write text..">
+                        </div>
+                        <div class="">
+                            <button class="btn btn-success" id="send2" onclick="sendMessageTwo()">Send2</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="chatclosebtn">
+                <button class="btn btn-warning btn-block" id="chat2" onclick="chat2()">Chat</button>
+                <button class="btn btn-danger btn-block" id="closeChat2" onclick="closeChat2()">Close</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
 
     <script>
 
@@ -62,8 +98,35 @@
             var arrayText = [];
             var messText = document.getElementById("message").value
             arrayText.push(messText)
-            document.getElementById("showChat").innerHTML += "<div style='background: #F0F8FF; padding:8px; margin-bottom: 5px; border-radius: 20px;'>"+arrayText+"</div>"
+            document.getElementById("showChat").innerHTML += "<div><img src='image/jahurul.PNG' style='hight:25px; width: 25px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px; '></img><span style='background: rgb(199, 229, 255); padding:5px; border-radius: 100px;'>"+arrayText+"</span> </div>"+"</br>"
             document.getElementById("message").value=''
+        }
+
+//second===========
+
+        document.getElementById("chatText2").style.display = "block"
+        document.getElementById("closeChat2").style.display = "none"
+        //document.getElementById("chat2").style.display = "none"
+
+        function chat2(){
+            document.getElementById("chatText2").style.display = "block"
+            document.getElementById("closeChat2").style.display = "block"
+            document.getElementById("chat2").style.display = "none"
+        }
+
+        function closeChat2(){
+            document.getElementById("chatText2").style.display = "none"
+            document.getElementById("closeChat2").style.display = "none"
+            document.getElementById("chat2").style.display = "block"
+            //document.getElementById("chatfield").style.cssFloat = "right"
+        }
+
+        function sendMessageTwo(){
+            var arrayText2 = [];
+            var messText2 = document.getElementById("message2").value
+            arrayText2.push(messText2)
+            document.getElementById("showChat2").innerHTML += "<div style='text-align: end;'> <img src='image/jahurul.PNG' style='hight:25px; width: 25px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px; '></img> <span style='background: rgb(255, 107, 107); padding:5px; border-radius: 100px; color:white'>"+arrayText2+"</span> </div>"+"</br>"
+            document.getElementById("message2").value=''
         }
 
     </script>

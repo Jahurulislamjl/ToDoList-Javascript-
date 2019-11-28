@@ -14,16 +14,29 @@ input[type=text]{
 #showChat{
     border-radius: 0;
     border: none;
+    height: 250px;
 }
 #chat, #closeChat{
     border-radius: 0;
     color: white;
+    
 }
 #send{
     border-radius: 0;
     border-left: none;
 }
 
-#showChat{
+#showChat2{
+    border-radius: 0;
+    border: none;
     height: 250px;
+}
+#chat2, #closeChat2{
+    border-radius: 0;
+    color: white;
+    
+}
+#send2{
+    border-radius: 0;
+    border-left: none;
 }
