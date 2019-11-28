@@ -77,7 +77,7 @@
 
     <script>
 
-        document.getElementById("chatText").style.display = "block"
+        document.getElementById("chatText").style.display = "none"
         document.getElementById("closeChat").style.display = "none"
         //document.getElementById("chat").style.display = "none"
 
@@ -91,20 +91,25 @@
             document.getElementById("chatText").style.display = "none"
             document.getElementById("closeChat").style.display = "none"
             document.getElementById("chat").style.display = "block"
-            //document.getElementById("chatfield").style.cssFloat = "right"
         }
 
+        
+        
+        
         function sendMessage(){
             var arrayText = [];
             var messText = document.getElementById("message").value
             arrayText.push(messText)
-            document.getElementById("showChat").innerHTML += "<div><img src='image/jahurul.PNG' style='hight:25px; width: 25px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px; '></img><span style='background: rgb(199, 229, 255); padding:5px; border-radius: 100px;'>"+arrayText+"</span> </div>"+"</br>"
+            document.getElementById("showChat").innerHTML += "<div style='text-align: end;'> <span style='background: rgb(199, 229, 255); padding:5px; border-radius: 100px;'>"+arrayText+"</span> </div>"+"</br>"
+
+            document.getElementById("showChat2").innerHTML += "<div><img src='image/jahurul.PNG' style='hight:25px; width: 25px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px;'></img><span style='background: rgb(199, 229, 255); padding:5px; border-radius: 100px;'>"+arrayText+"</span></div>"+"</br>"
+
             document.getElementById("message").value=''
         }
 
 //second===========
 
-        document.getElementById("chatText2").style.display = "block"
+        document.getElementById("chatText2").style.display = "none"
         document.getElementById("closeChat2").style.display = "none"
         //document.getElementById("chat2").style.display = "none"
 
@@ -118,14 +123,16 @@
             document.getElementById("chatText2").style.display = "none"
             document.getElementById("closeChat2").style.display = "none"
             document.getElementById("chat2").style.display = "block"
-            //document.getElementById("chatfield").style.cssFloat = "right"
         }
 
         function sendMessageTwo(){
             var arrayText2 = [];
             var messText2 = document.getElementById("message2").value
             arrayText2.push(messText2)
-            document.getElementById("showChat2").innerHTML += "<div style='text-align: end;'> <img src='image/jahurul.PNG' style='hight:25px; width: 25px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px; '></img> <span style='background: rgb(255, 107, 107); padding:5px; border-radius: 100px; color:white'>"+arrayText2+"</span> </div>"+"</br>"
+            document.getElementById("showChat2").innerHTML += "<div style='text-align: end;'> <span style='background: rgb(255, 107, 107); padding:5px; border-radius: 100px; color:white'>"+arrayText2+"</span> </div>"+"</br>"
+
+            document.getElementById("showChat").innerHTML += "<div'> <img src='image/girl.jpg' style='hight:25px; width: 25px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px; '></img> <span style='background: rgb(255, 107, 107); padding:5px; border-radius: 100px; color:white'>"+arrayText2+"</span></div>"+"</br>"
+
             document.getElementById("message2").value=''
         }
 
