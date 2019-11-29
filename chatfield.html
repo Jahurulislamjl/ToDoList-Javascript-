@@ -15,27 +15,29 @@
             <div class="col-6">
                 <div class="card" id="chatfield">
 
-                    <div class="card-header pb-2">
+                    <nav class="navbar bg-light fixrd-top pb-2">
                         <div class="row">
                             <div class="col-3" id="profileImg">
-                                <img src="image/jahurul.PNG" alt="jahurul" onclick="closeChat()">
+                                <img src="image/jahurul.PNG" alt="jahurul" id="profilImg" onclick="closeChat()">
                             </div>
                             <div class="col-9 mt-2">
                                 <h4>Jahurul Islam</h4>
                             </div>
                         </div>
-                    </div>
+                    </nav>
 
                     <div id="showChat" class="card-body"></div> 
 
-                    <div class="card-footer" id="chatclosebtn">
+                    <nav class="navbar footer bg-light fixed" id="chatclosebtn">
                         <div class="row">
-                            <div class="col-10">
-                                <input type="text" class="form-control" id="message" placeholder="Write text..">
+                            <div class="col-9 px-2">
+                                <input type="text" class="form-control" id="message" onclick="inputtext()" placeholder="Write text..">
                             </div>
-                            <div class="col-2 btn btn-success" id="send" onclick="sendMessage()">Send</div>
+                            <div class="col-3 px-2">
+                            <button class ="btn btn-success" id="send" onclick="sendMessage()">Send</button>   
+                            </div>
                         </div>
-                    </div> 
+                    </nav> 
                 </div>
                 <div id="frontImg">
                     <img src="image/jahurul.PNG" alt="Jahurul" onclick="chatOpen()" id="chatOpen">
@@ -45,30 +47,31 @@
         <!-- ==========Second============= -->
 
         <div class="col-6">
-            <div class="card" id="chatfield2">
+            <div class="card fixed" id="chatfield2">
 
-                <div class="card-header pb-2">
+                <nav class="navbar fixrd-top bg-light pb-2">
                     <div class="row">
-                        <div class="col-3" id="profileImg">
-                            <img src="image/girl.jpg" alt="enemy" onclick="closeChat2()">
+                        <div class="col-3" id="profileImg2">
+                            <img src="image/girl.jpg" alt="enemy" id="profilImg2" onclick="closeChat2()">
                         </div>
-                        <div class="col-9 mt-2">
+                        <div class="col-9 mt-2 px-4">
                             <h4>Enemy</h4>
                         </div>
                     </div>
-                </div>
+                </nav>
 
-                <div id="showChat2" class="card-body"> </div>
-                <div id="count"></div>
+                <div id="showChat2" class="card-body fixed"> </div>
 
-                <div id="chatclosebtn" class="card-footer">
+                <nav id="chatclosebtn" class="navbar footer bg-light fixed">
                     <div class="row">
-                        <div class="col-10">
-                            <input type="text" class="form-control" id="message2" placeholder="Write text..">
+                        <div class="col-9 px-2">
+                            <input type="text" class="form-control" id="message2" onclick="inputtext2()" placeholder="Write text..">
                         </div>
-                        <div class="col-2 btn btn-success" id="send2" onclick="sendMessageTwo()">Send</div>
+                        <div class="col-3 px-2">
+                        <button class=" btn btn-success" id="send2" onclick="sendMessageTwo()">Send</button>
                     </div>
-                </div>
+                    </div>
+                </nav>
             </div>
             <div id="frontImg">
                 <img src="image/girl.jpg" alt="enemy" onclick="chatOpen2()" id="chatOpen2">
@@ -76,6 +79,11 @@
         </div>
     </div>
     </div>
+
+
+
+
+    <!-- script -->
 
     <script>
 
@@ -92,25 +100,26 @@
         }
  
         function sendMessage(){
-            var arrayText = [document.getElementById("message").value];
 
-            document.getElementById("showChat").innerHTML += "<div style='text-align: end;'> <span style='background: rgb(199, 229, 255); padding:5px; border-radius: 100px;'>"+arrayText+"</span> </div>"+"</br>"
-
-            document.getElementById("showChat2").innerHTML += "<div><img src='image/jahurul.PNG' style='hight:30px; width: 30px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px;'></img><span style='background: rgb(199, 229, 255); padding:5px; border-radius: 100px;'>"+arrayText+"</span></div>"+"</br>"
-
-            // for(var i=1; i<100; i++){
-            //     document.getElementById("count").innerHTML =i
-            // }
-            var i = 1;
-            while(i){
-                document.getElementById("count").innerHTML =i
-                i++;
+            if(document.getElementById("message").value==""){
+                document.getElementById("chatOpen2").style.borderColor="rgb(178, 210, 238)"
             }
-            
-                
-            
+            else{
+                var arrayText = [document.getElementById("message").value];
+
+                document.getElementById("showChat").innerHTML += "<div style='text-align: end;'> <span style='background: rgb(199, 229, 255); padding:5px; border-radius: 100px;'>"+arrayText+"</span> </div>"+"</br>"
+
+                document.getElementById("showChat2").innerHTML += "<div><img src='image/jahurul.PNG' style='hight:30px; width: 30px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px;'></img><span style='background: rgb(199, 229, 255); padding:5px; border-radius: 100px;'>"+arrayText+"</span></div>"+"</br>"
+                document.getElementById("chatOpen2").style.border="4px solid red"
+                document.getElementById("profilImg2").style.border="3px solid red"
+            }
 
             document.getElementById("message").value=''
+        }
+
+        function inputtext(){
+            document.getElementById("profilImg").style.borderColor="rgb(178, 210, 238)"
+            document.getElementById("chatOpen").style.borderColor="rgb(178, 210, 238)"
         }
 
 
@@ -129,13 +138,27 @@
         }
 
         function sendMessageTwo(){
-            var arrayText2 = [document.getElementById("message2").value];
 
-            document.getElementById("showChat2").innerHTML += "<div style='text-align: end;'> <span style='background: rgb(255, 107, 107); padding:5px; border-radius: 100px; color:white'>"+arrayText2+"</span> </div>"+"</br>"
+            if(document.getElementById("message2").value==""){
+                document.getElementById("chatOpen").style.borderColor="rgb(178, 210, 238)"
+            }
+            else{
+                var arrayText2 = [document.getElementById("message2").value];
 
-            document.getElementById("showChat").innerHTML += "<div'> <img src='image/girl.jpg' style='hight:25px; width: 30px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px; '></img> <span style='background: rgb(255, 107, 107); padding:5px; border-radius: 100px; color:white'>"+arrayText2+"</span></div>"+"</br>"
+                document.getElementById("showChat2").innerHTML += "<div style='text-align: end;'> <span style='background: rgb(255, 107, 107); padding:5px; border-radius: 100px; color:white'>"+arrayText2+"</span> </div>"+"</br>"
 
+                document.getElementById("showChat").innerHTML += "<div'> <img src='image/girl.jpg' style='hight:25px; width: 30px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px; '></img> <span style='background: rgb(255, 107, 107); padding:5px; border-radius: 100px; color:white'>"+arrayText2+"</span></div>"+"</br>"
+
+                document.getElementById("chatOpen").style.border="4px solid red"
+                document.getElementById("profilImg").style.border="3px solid red"
+            }
+            
             document.getElementById("message2").value=''
+        }
+
+        function inputtext2(){
+            document.getElementById("profilImg2").style.borderColor="rgb(178, 210, 238)"
+            document.getElementById("chatOpen2").style.borderColor="rgb(178, 210, 238)"
         }
 
     </script>
