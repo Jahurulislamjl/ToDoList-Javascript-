@@ -59,6 +59,7 @@
                 </div>
 
                 <div id="showChat2" class="card-body"> </div>
+                <div id="count"></div>
 
                 <div id="chatclosebtn" class="card-footer">
                     <div class="row">
@@ -95,7 +96,19 @@
 
             document.getElementById("showChat").innerHTML += "<div style='text-align: end;'> <span style='background: rgb(199, 229, 255); padding:5px; border-radius: 100px;'>"+arrayText+"</span> </div>"+"</br>"
 
-            document.getElementById("showChat2").innerHTML += "<div><img src='image/jahurul.PNG' style='hight:25px; width: 25px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px;'></img><span style='background: rgb(199, 229, 255); padding:5px; border-radius: 100px;'>"+arrayText+"</span></div>"+"</br>"
+            document.getElementById("showChat2").innerHTML += "<div><img src='image/jahurul.PNG' style='hight:30px; width: 30px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px;'></img><span style='background: rgb(199, 229, 255); padding:5px; border-radius: 100px;'>"+arrayText+"</span></div>"+"</br>"
+
+            // for(var i=1; i<100; i++){
+            //     document.getElementById("count").innerHTML =i
+            // }
+            var i = 1;
+            while(i){
+                document.getElementById("count").innerHTML =i
+                i++;
+            }
+            
+                
+            
 
             document.getElementById("message").value=''
         }
@@ -120,7 +133,7 @@
 
             document.getElementById("showChat2").innerHTML += "<div style='text-align: end;'> <span style='background: rgb(255, 107, 107); padding:5px; border-radius: 100px; color:white'>"+arrayText2+"</span> </div>"+"</br>"
 
-            document.getElementById("showChat").innerHTML += "<div'> <img src='image/girl.jpg' style='hight:25px; width: 25px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px; '></img> <span style='background: rgb(255, 107, 107); padding:5px; border-radius: 100px; color:white'>"+arrayText2+"</span></div>"+"</br>"
+            document.getElementById("showChat").innerHTML += "<div'> <img src='image/girl.jpg' style='hight:25px; width: 30px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px; '></img> <span style='background: rgb(255, 107, 107); padding:5px; border-radius: 100px; color:white'>"+arrayText2+"</span></div>"+"</br>"
 
             document.getElementById("message2").value=''
         }
