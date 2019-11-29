@@ -13,71 +13,89 @@
         <div class="row">
 
             <div class="col-6">
-                <div class="card" id="chatfield">
+                <div class="p-2" id="mobile">
+                    <div class="pb-2 text-center" id="mobileHeader">Samsang</div>
+                    <div id="mobailScreen">
+                        <p class="lead p-5 text-light" id="smsNotif"> You got a new message!!</p>
+                        <div class="card" id="chatfield">
 
-                    <nav class="navbar bg-light fixrd-top pb-2">
-                        <div class="row">
-                            <div class="col-3" id="profileImg">
-                                <img src="image/jahurul.PNG" alt="jahurul" id="profilImg" onclick="closeChat()">
-                            </div>
-                            <div class="col-9 mt-2">
-                                <h4>Jahurul Islam</h4>
-                            </div>
+                            <nav class="navbar fixrd-top py-1" id="navTop">
+                                <div class="row">
+                                    <div class="col-3" id="profileImg">
+                                        <img src="image/jahurul.PNG" alt="jahurul" id="profilImg" onclick="closeChat()">
+                                    </div>
+                                    <div class="col-9 mt-2">
+                                        <h5>Jahurul Islam</h5>
+                                    </div>
+                                </div>
+                            </nav>
+
+                            <div id="showChat" class="card-body"></div> 
+
+                            <nav class="navbar footer fixed" id="chatclosebtn">
+                                <div class="row">
+                                    <div class="col-9 px-2">
+                                        <input type="text" class="form-control" id="message" onclick="inputtext()" placeholder="Write text..">
+                                    </div>
+                                    <div class="col-3 px-2">
+                                    <button class ="btn btn-success" id="send" onclick="sendMessage()">Send</button>   
+                                    </div>
+                                </div>
+                            </nav> 
                         </div>
-                    </nav>
-
-                    <div id="showChat" class="card-body"></div> 
-
-                    <nav class="navbar footer bg-light fixed" id="chatclosebtn">
-                        <div class="row">
-                            <div class="col-9 px-2">
-                                <input type="text" class="form-control" id="message" onclick="inputtext()" placeholder="Write text..">
-                            </div>
-                            <div class="col-3 px-2">
-                            <button class ="btn btn-success" id="send" onclick="sendMessage()">Send</button>   
-                            </div>
+                        <div id="frontImg">
+                            <img src="image/jahurul.PNG" alt="Jahurul" onclick="chatOpen()" id="chatOpen">
                         </div>
-                    </nav> 
-                </div>
-                <div id="frontImg">
-                    <img src="image/jahurul.PNG" alt="Jahurul" onclick="chatOpen()" id="chatOpen">
+                    </div>
+                    <div class=" text-center pt-1" id="mobailFooter">
+                        <button id="mobileButton" onclick="mobileBtn()"></button>
+                    </div>
                 </div>
             </div>
 
         <!-- ==========Second============= -->
 
         <div class="col-6">
-            <div class="card fixed" id="chatfield2">
+                <div class="p-2" id="mobile2">
+                    <div class="pb-2 text-center" id="mobileHeader2">Samsang</div>
+                    <div id="mobailScreen2">
+                        <p class="lead p-5 text-light" id="smsNotif2"> You got a new message!!</p>
+                        <div class="card" id="chatfield2">
 
-                <nav class="navbar fixrd-top bg-light pb-2">
-                    <div class="row">
-                        <div class="col-3" id="profileImg2">
-                            <img src="image/girl.jpg" alt="enemy" id="profilImg2" onclick="closeChat2()">
+                            <nav class="navbar fixrd-top py-1" id="navTop2">
+                                <div class="row">
+                                    <div class="col-3" id="profileImg2">
+                                        <img src="image/girl.jpg" alt="enemy" id="profilImg2" onclick="closeChat2()">
+                                    </div>
+                                    <div class="col-9 mt-2 pl-4">
+                                        <h5>Enemy</h5>
+                                    </div>
+                                </div>
+                            </nav>
+
+                            <div id="showChat2" class="card-body"></div> 
+
+                            <nav class="navbar footer fixed" id="chatclosebtn">
+                                <div class="row">
+                                    <div class="col-9 px-2">
+                                        <input type="text" class="form-control" id="message2" onclick="inputtext2()" placeholder="Write text..">
+                                    </div>
+                                    <div class="col-3 px-2">
+                                    <button class ="btn btn-success" id="send2" onclick="sendMessage2()">Send</button>   
+                                    </div>
+                                </div>
+                            </nav> 
                         </div>
-                        <div class="col-9 mt-2 px-4">
-                            <h4>Enemy</h4>
+                        <div id="frontImg">
+                            <img src="image/girl.jpg" alt="enemy" onclick="chatOpen2()" id="chatOpen2">
                         </div>
                     </div>
-                </nav>
-
-                <div id="showChat2" class="card-body fixed"> </div>
-
-                <nav id="chatclosebtn" class="navbar footer bg-light fixed">
-                    <div class="row">
-                        <div class="col-9 px-2">
-                            <input type="text" class="form-control" id="message2" onclick="inputtext2()" placeholder="Write text..">
-                        </div>
-                        <div class="col-3 px-2">
-                        <button class=" btn btn-success" id="send2" onclick="sendMessageTwo()">Send</button>
+                    <div class=" text-center pt-1" id="mobailFooter2">
+                        <button id="mobileButton2" onclick="mobileBtn2()"></button>
                     </div>
-                    </div>
-                </nav>
-            </div>
-            <div id="frontImg">
-                <img src="image/girl.jpg" alt="enemy" onclick="chatOpen2()" id="chatOpen2">
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
 
@@ -87,7 +105,9 @@
 
     <script>
 
-        document.getElementById("chatfield").style.display = "block"
+        document.getElementById("chatfield").style.display = "none"
+        document.getElementById("chatOpen").style.display = "none"
+        document.getElementById("smsNotif").style.display = "none"
 
         function chatOpen(){
             document.getElementById("chatfield").style.display = "block"
@@ -112,8 +132,11 @@
                 document.getElementById("showChat2").innerHTML += "<div><img src='image/jahurul.PNG' style='hight:30px; width: 30px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px;'></img><span style='background: rgb(199, 229, 255); padding:5px; border-radius: 100px;'>"+arrayText+"</span></div>"+"</br>"
                 document.getElementById("chatOpen2").style.border="4px solid red"
                 document.getElementById("profilImg2").style.border="3px solid red"
-            }
 
+                document.getElementById("mobailScreen2").style.backgroundColor="green"
+                document.getElementById("smsNotif2").style.display = "block"
+            }
+            document.getElementById("mobailScreen2").style.backgroundColor="none"
             document.getElementById("message").value=''
         }
 
@@ -122,10 +145,18 @@
             document.getElementById("chatOpen").style.borderColor="rgb(178, 210, 238)"
         }
 
+        function mobileBtn(){
+            document.getElementById("mobailScreen").style.backgroundColor="green"
+            document.getElementById("chatOpen").style.display = "block"
+            document.getElementById("smsNotif").style.display = "none"
+        }
+
 
 //second===========
 
-        document.getElementById("chatfield2").style.display = "block"
+        document.getElementById("chatfield2").style.display = "none"
+        document.getElementById("chatOpen2").style.display = "none"
+        document.getElementById("smsNotif2").style.display = "none"
 
         function chatOpen2(){
             document.getElementById("chatfield2").style.display = "block"
@@ -137,7 +168,7 @@
             document.getElementById("chatOpen2").style.display = "block"
         }
 
-        function sendMessageTwo(){
+        function sendMessage2(){
 
             if(document.getElementById("message2").value==""){
                 document.getElementById("chatOpen").style.borderColor="rgb(178, 210, 238)"
@@ -151,14 +182,25 @@
 
                 document.getElementById("chatOpen").style.border="4px solid red"
                 document.getElementById("profilImg").style.border="3px solid red"
+
+                document.getElementById("mobailScreen").style.backgroundColor="green"
+                document.getElementById("smsNotif").style.display = "block"
             }
-            
+            document.getElementById("mobailScreen").style.backgroundColor="none"
+           
             document.getElementById("message2").value=''
         }
+
 
         function inputtext2(){
             document.getElementById("profilImg2").style.borderColor="rgb(178, 210, 238)"
             document.getElementById("chatOpen2").style.borderColor="rgb(178, 210, 238)"
+        }
+
+        function mobileBtn2(){
+            document.getElementById("mobailScreen2").style.backgroundColor="green"
+            document.getElementById("chatOpen2").style.display = "block"
+            document.getElementById("smsNotif2").style.display = "none"
         }
 
     </script>

@@ -1,8 +1,35 @@
+#mobile{
+    width: 298px;
+    height: 500px;
+    background: rgb(241, 241, 241);
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px 5px #e0e0e0;
+}
+
+#mobailScreen{
+    width: 280px;
+    height: 425px;
+    border: none;
+    background: #8a8787;
+}
+#mobileButton{
+    height: 25px;
+    width: 88px;
+    border-radius: 100px;
+    border: 3px solid #ffffff;
+    background: #d0d0d0;
+}
+
+#navTop{
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+
 #chatfield{
     background: white;
-    width: 300px;
-    margin: 50px auto;
+    width: 280px;
+    margin:  auto;
     border-radius: 0;
+    border: none;
 }
 
 input[type=text]{
@@ -11,12 +38,40 @@ input[type=text]{
 #showChat{
     border-radius: 0;
     border: none;
-    height: 300px;
+    height: 321px;
 }
     
 
 #send{
     border-radius: 100px;
+}
+
+/* second */
+
+#mobile2{
+    width: 298px;
+    height: 500px;
+    background: rgb(241, 241, 241);
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px 5px #e0e0e0;
+}
+
+#mobailScreen2{
+    width: 280px;
+    height: 425px;
+    border: none;
+    background: #8a8787;
+}
+#mobileButton2{
+    height: 25px;
+    width: 88px;
+    border-radius: 100px;
+    border: 3px solid #ffffff;
+    background: #d0d0d0;
+}
+
+#navTop2{
+    border-bottom: 1px solid rgb(238, 238, 238);
 }
 
 #frontImg img{
@@ -27,23 +82,24 @@ input[type=text]{
 }
 
 #profileImg img, #profileImg2 img {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     border-radius: 100%; 
     border: 2px solid rgb(178, 210, 238);
 }
 
 #chatfield2{
     background: white;
-    width: 300px;
-    margin: 50px auto;
+    width: 280px;
+    margin:  auto;
     border-radius: 0;
+    border: none;
 }
 
 #showChat2{
     border-radius: 0;
     border: none;
-    height: 300px;
+    height: 321px;
 }
     
 
