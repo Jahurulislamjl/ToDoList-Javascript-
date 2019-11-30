@@ -183,10 +183,17 @@
                 document.getElementById("chatOpen").style.border="4px solid red"
                 document.getElementById("profilImg").style.border="3px solid red"
 
-                document.getElementById("mobailScreen").style.backgroundColor="green"
-                document.getElementById("smsNotif").style.display = "block"
+                if(document.getElementById("chatfield2").style.display = "block"){
+                    document.getElementById("mobailScreen").style.backgroundColor="none"
+                    document.getElementById("smsNotif").style.display = "none"
+                }
+                else{
+                    document.getElementById("mobailScreen").style.backgroundColor="green"
+                    document.getElementById("smsNotif").style.display = "block"
+                }
+                
             }
-            document.getElementById("mobailScreen").style.backgroundColor="none"
+            //document.getElementById("mobailScreen").style.backgroundColor="none"
            
             document.getElementById("message2").value=''
         }
