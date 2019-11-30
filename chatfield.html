@@ -14,7 +14,7 @@
 
             <div class="col-6">
                 <div class="p-2" id="mobile">
-                    <div class="pb-2 text-center" id="mobileHeader">Samsang</div>
+                    <div class="pb-2 text-center" id="mobileHeader" onclick="mobileOff()">Samsang</div>
                     <div id="mobailScreen">
                         <p class="lead p-5 text-light" id="smsNotif"> You got a new message!!</p>
                         <div class="card" id="chatfield">
@@ -57,7 +57,7 @@
 
         <div class="col-6">
                 <div class="p-2" id="mobile2">
-                    <div class="pb-2 text-center" id="mobileHeader2">Samsang</div>
+                    <div class="pb-2 text-center" id="mobileHeader2" onclick="mobileOff2()">Samsang</div>
                     <div id="mobailScreen2">
                         <p class="lead p-5 text-light" id="smsNotif2"> You got a new message!!</p>
                         <div class="card" id="chatfield2">
@@ -132,23 +132,29 @@
                 document.getElementById("showChat2").innerHTML += "<div><img src='image/jahurul.PNG' style='hight:30px; width: 30px; border-radius: 100%; border:1px solid rgb(178, 210, 238); margin-right: 5px;'></img><span style='background: rgb(199, 229, 255); padding:5px; border-radius: 100px;'>"+arrayText+"</span></div>"+"</br>"
                 document.getElementById("chatOpen2").style.border="4px solid red"
                 document.getElementById("profilImg2").style.border="3px solid red"
+                document.getElementById("mobileButton2").style.border="3px solid yellow"
 
-                document.getElementById("mobailScreen2").style.backgroundColor="green"
-                document.getElementById("smsNotif2").style.display = "block"
             }
-            document.getElementById("mobailScreen2").style.backgroundColor="none"
+
             document.getElementById("message").value=''
         }
 
         function inputtext(){
             document.getElementById("profilImg").style.borderColor="rgb(178, 210, 238)"
             document.getElementById("chatOpen").style.borderColor="rgb(178, 210, 238)"
+            document.getElementById("mobileButton").style.border="3px solid #ffffff"
         }
 
         function mobileBtn(){
             document.getElementById("mobailScreen").style.backgroundColor="green"
             document.getElementById("chatOpen").style.display = "block"
             document.getElementById("smsNotif").style.display = "none"
+            document.getElementById("mobileButton").style.border="3px solid #ffffff"
+        }
+
+        function  mobileOff(){
+            document.getElementById("mobailScreen").style.backgroundColor="#8a8787"
+            document.getElementById("chatOpen").style.display = "none"
         }
 
 
@@ -182,16 +188,7 @@
 
                 document.getElementById("chatOpen").style.border="4px solid red"
                 document.getElementById("profilImg").style.border="3px solid red"
-
-                if(document.getElementById("chatfield2").style.display = "block"){
-                    document.getElementById("mobailScreen").style.backgroundColor="none"
-                    document.getElementById("smsNotif").style.display = "none"
-                }
-                else{
-                    document.getElementById("mobailScreen").style.backgroundColor="green"
-                    document.getElementById("smsNotif").style.display = "block"
-                }
-                
+                document.getElementById("mobileButton").style.border="3px solid yellow"
             }
             //document.getElementById("mobailScreen").style.backgroundColor="none"
            
@@ -202,12 +199,19 @@
         function inputtext2(){
             document.getElementById("profilImg2").style.borderColor="rgb(178, 210, 238)"
             document.getElementById("chatOpen2").style.borderColor="rgb(178, 210, 238)"
+            document.getElementById("mobileButton2").style.border="3px solid #ffffff"
         }
 
         function mobileBtn2(){
             document.getElementById("mobailScreen2").style.backgroundColor="green"
             document.getElementById("chatOpen2").style.display = "block"
             document.getElementById("smsNotif2").style.display = "none"
+            document.getElementById("mobileButton2").style.border="3px solid #ffffff"
+        }
+
+        function  mobileOff2(){
+            document.getElementById("mobailScreen2").style.backgroundColor="#8a8787"
+            document.getElementById("chatOpen2").style.display = "none"
         }
 
     </script>
